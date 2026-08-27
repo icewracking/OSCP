@@ -131,8 +131,12 @@
   .path-line .step{
     padding:6px 11px; background:var(--bg-raised); border:1px solid var(--line);
     border-radius:3px; color:var(--ink-dim);
+    text-decoration:none; display:inline-block; cursor:pointer;
+    transition:border-color .15s, color .15s, background .15s;
   }
+  .path-line a.step:hover{color:var(--ink); border-color:var(--copper-soft); background:#20262c;}
   .path-line .step.done{color:var(--ok); border-color:#3a4a3c;}
+  .path-line a.step.done:hover{color:var(--ok); border-color:var(--ok); background:rgba(106,155,109,0.08);}
   .path-line .arrow{color:var(--ink-faint); align-self:center;}
 
   /* ---------- methodology ---------- */
@@ -146,9 +150,10 @@
   .method-list li::before{
     content: counter(m, decimal-leading-zero);
     font-family:var(--mono); font-size:13px; color:var(--copper);
+    grid-column:1; grid-row:1 / span 2;
   }
-  .method-list h3{margin:0 0 6px; font-size:15.5px; font-weight:600;}
-  .method-list p{margin:0; color:var(--ink-dim); font-size:14.5px;}
+  .method-list h3{margin:0 0 6px; font-size:15.5px; font-weight:600; grid-column:2;}
+  .method-list p{margin:0; color:var(--ink-dim); font-size:14.5px; grid-column:2;}
 
   /* ---------- machine log ---------- */
   .filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; font-family:var(--mono); font-size:12px;}
@@ -241,7 +246,7 @@
 <div class="hero">
   <div class="stamp">status: in progress — oscp prep</div>
   <h1>A working log of the TJNull list,<br>machine by machine.</h1>
-  <p class="lede">Every box gets enumerated, exploited, and written up the same way — recon, foothold, privesc, lessons — as practice for the reports that actually matter later.</p>
+  <p class="lede">Every box gets enumerated, exploited, and written up the same way: recon, foothold, privesc, lessons, as practice for the reports that actually matter later.</p>
 
   <div class="terminal">
     <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
@@ -252,15 +257,15 @@
 <section id="about">
   <div class="section-head"><h2>About this log</h2><span class="idx">01</span></div>
   <div class="about-grid">
-    <p>This is a public record of working through TJNull's OSCP-prep machine list — a mix of HTB and Proving Grounds boxes chosen to mirror OSCP's exam style. Each entry is documented the way a real engagement would be, not just "rooted it," so the writing itself is part of the practice.</p>
-    <p>It sits alongside a broader certification path: Security+ and CySA+ first, then Pentest+, a PNPT retake, and — once this list is done and the fundamentals are solid — OSCP itself.</p>
+    <p>This is a public record of working through TJNull's OSCP-prep machine list a mix of HTB and Proving Grounds boxes chosen to mirror OSCP's exam style. Each entry is documented the way a real engagement would be, not just "rooted it," so the writing itself is part of the practice.</p>
+    <p>It sits alongside a broader certification path: Security+ and CySA+ first, then Pentest+, PNPT, and once this list is done and the fundamentals are solid — OSCP itself.</p>
     <div class="path-line">
-      <span class="step done">Security+</span><span class="arrow">→</span>
-      <span class="step done">CySA+</span><span class="arrow">→</span>
-      <span class="step">Pentest+</span><span class="arrow">→</span>
-      <span class="step">PNPT (retake)</span><span class="arrow">→</span>
-      <span class="step">TJNull list</span><span class="arrow">→</span>
-      <span class="step">OSCP</span>
+      <a href="#" class="step done" target="_blank" rel="noopener">Security+</a><span class="arrow">→</span>
+      <a href="#" class="step done" target="_blank" rel="noopener">CySA+</a><span class="arrow">→</span>
+      <a href="#" class="step" target="_blank" rel="noopener">Pentest+</a><span class="arrow">→</span>
+      <a href="#" class="step" target="_blank" rel="noopener">PNPT (retake)</a><span class="arrow">→</span>
+      <a href="#" class="step" target="_blank" rel="noopener">TJNull list</a><span class="arrow">→</span>
+      <a href="#" class="step" target="_blank" rel="noopener">OSCP</a>
     </div>
   </div>
 </section>
@@ -371,7 +376,7 @@
 
   // ---- machine data (placeholders — edit freely) ----
   const machines = [
-    { name:'Active', platform:'HTB', os:'Windows', diff:'easy', status:'rooted', link:'Active.html' },
+    { name:'Active', platform:'HTB', os:'Windows', diff:'easy', status:'todo', link:'href="Active.html"' },
     { name:'Legacy', platform:'HTB', os:'Windows', diff:'easy', status:'rooted', link:'#' },
     { name:'Blue', platform:'HTB', os:'Windows', diff:'easy', status:'rooted', link:'#' },
     { name:'Nibbles', platform:'HTB', os:'Linux', diff:'easy', status:'user', link:'#' },
